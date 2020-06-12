@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from '../../App'
+
 
 const Profile = () => {
+
+    const { state, dispatch } = useContext(UserContext)
 
     return (
         <div className="profile">
@@ -12,7 +16,7 @@ const Profile = () => {
 
                 <div >
 
-                    <h4>a.s.w.i.n_a.v</h4>
+                    <h4>{state ? state.name : "Loading!!!!"}</h4>
                     <div className="stats">
                         <h6>31 posts</h6>
                         <h6>607 followers</h6>
