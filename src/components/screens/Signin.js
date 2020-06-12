@@ -33,7 +33,7 @@ const Signin = () => {
 
 
 
-        fetch('/signin', requestOptions)
+        fetch('signin', requestOptions)
             .then(response => response.json())
             .then(data => {
 
