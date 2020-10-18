@@ -7,6 +7,9 @@ import { UserContext } from '../../App'
 
 const Signin = () => {
 
+        const baseURL = process.env.REACT_APP_SERVICE_URI? process.env.REACT_APP_SERVICE_URI : 'http://localhost:5000'
+
+
     const { state, dispatch } = useContext(UserContext)
     const history = useHistory()
     const [email, setEmail] = useState("")
@@ -36,7 +39,7 @@ const Signin = () => {
 
 
 
-        fetch('http://localhost:5000/signin', requestOptions)
+        fetch(baseURL + '/signin', requestOptions)
             .then(response => response.json())
             .then(data => {
 

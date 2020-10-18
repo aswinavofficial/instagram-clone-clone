@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Post from './Post.js'
 const Home = () => {
 
+    const baseURL = process.env.REACT_APP_SERVICE_URI? process.env.REACT_APP_SERVICE_URI : 'http://localhost:5000'
+
     const [posts,setPosts] = useState([])
     const [isFetching, setIsFetching] = useState(false);
 
@@ -14,7 +16,7 @@ const Home = () => {
 
         window.addEventListener('scroll', handleScroll);
 
-        fetch('http://localhost:5000/post/all', requestOptions)
+        fetch(baseURL + '/post/all', requestOptions)
             .then(response => response.json())
             .then(data => {
 
@@ -53,7 +55,7 @@ const Home = () => {
 
   function fetchMoreListItems() {
   
-     fetch('http://localhost:5000/post/latest', requestOptions)
+     fetch(baseURL +  '/post/latest', requestOptions)
             .then(response => response.json())
             .then(data => {
 

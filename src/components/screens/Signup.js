@@ -23,6 +23,9 @@ const Signup = () => {
 
     const postData = () => {
 
+        const baseURL = process.env.REACT_APP_SERVICE_URI? process.env.REACT_APP_SERVICE_URI : 'http://localhost:5000'
+
+
 
         /* eslint-disable-next-line */
         if (!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email)) {
@@ -39,7 +42,7 @@ const Signup = () => {
             M.toast({ html: "Please input a valid password", classes: "#c62828 red darken-3" })
             return
         }
-        fetch('http://localhost:5000/signup', requestOptions)
+        fetch(baseURL + '/signup', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
