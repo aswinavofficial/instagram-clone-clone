@@ -39,7 +39,7 @@ const Signup = () => {
             M.toast({ html: "Please input a valid password", classes: "#c62828 red darken-3" })
             return
         }
-        fetch('https://insta-cloner.herokuapp.com/signup', requestOptions)
+        fetch('http://localhost:5000/signup', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)

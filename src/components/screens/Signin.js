@@ -36,7 +36,7 @@ const Signin = () => {
 
 
 
-        fetch('https://insta-cloner.herokuapp.com/signin', requestOptions)
+        fetch('http://localhost:5000/signin', requestOptions)
             .then(response => response.json())
             .then(data => {
 
