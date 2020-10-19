@@ -12,4 +12,4 @@ after_success:
 
 env:
     process.env.CI : false
-    process.env.REACT_APP_SERVICE_URI : "https://insta-cloner.herokuapp.com"
+    process.env.REACT_APP_SERVICE_URI : "https://insta-server.aswin.tech"
