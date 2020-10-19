@@ -4,3 +4,5 @@ Instagram Clone Client - React
 
 
 https://upmostly.com/tutorials/build-an-infinite-scroll-component-in-react-using-react-hooks
+
+Added CNAME in public folder to fix custom domain removal issue after each build
