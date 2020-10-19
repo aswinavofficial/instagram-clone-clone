@@ -13,6 +13,8 @@ const NavBar = () => {
         if (state) {
             return [
                 <li key="profile"><Link to="/profile">Profile</Link></li>,
+                <li key="newpost"><Link to="/newpost">New Post</Link></li>,
+
                 <li key="logout">
 
                     <button className="btn waves-effect waves-light #e53935 red darken-1 "

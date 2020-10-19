@@ -6,6 +6,7 @@ import Home from './components/screens/Home'
 import Profile from './components/screens/Profile'
 import Signin from './components/screens/Signin'
 import Signup from './components/screens/Signup'
+import NewPost from './components/screens/NewPost'
 import { reducer, initialState } from './reducers/userReducer'
 
 export const UserContext = createContext()
@@ -45,6 +46,10 @@ const Routing = () => {
 
       <Route path="/profile">
         <Profile />
+      </Route>
+
+      <Route path="/newpost">
+        <NewPost />
       </Route>
     </Switch>
 
