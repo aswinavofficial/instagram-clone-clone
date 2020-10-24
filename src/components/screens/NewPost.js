@@ -58,6 +58,7 @@ fetch('https://api.cloudinary.com/v1_1/dzfjtvyhe/image/upload', {
                 console.log(data)
                 if (data.error) {
                     M.toast({ html: data.error, classes: "#c62828 red darken-3" })
+                    history.push('/')
 
                 }
                 else {
