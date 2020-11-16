@@ -14,7 +14,7 @@ const Home = () => {
 
     useState(() => {
 
-        window.addEventListener('scroll', handleScroll);.
+        window.addEventListener('scroll', handleScroll);
         window.addEventListener('touchmove', handleScroll);
 
         fetch(baseURL + '/post/latest?createdOnBefore=' + createdOnBefore, requestOptions)
