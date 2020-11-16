@@ -15,7 +15,6 @@ const Home = () => {
     useState(() => {
 
         window.addEventListener('scroll', handleScroll);
-        window.addEventListener('touchmove', handleScroll);
 
         fetch(baseURL + '/post/latest?createdOnBefore=' + createdOnBefore, requestOptions)
             .then(response => response.json())
@@ -32,7 +31,6 @@ const Home = () => {
                 setCreatedOnBefore(data.posts[data.posts.length -1].createdAt)
                 return () => {
                     window.removeEventListener('scroll', handleScroll);
-                    window.removeEventListener('touchmove', handleScroll);
                 }
 
             })
