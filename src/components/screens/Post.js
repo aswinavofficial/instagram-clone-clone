@@ -7,7 +7,11 @@ const Post = (props) => {
     return (
         <div className="post">
             <div className="card post-card">
-    <h6 className="postedUser">{postedBy && postedBy.name}</h6>
+    <div className = "post-titlebar">
+    <i className="material-icons Medium user-img-card">account_circle</i>
+    <div className="postedUser" >{postedBy && postedBy.name} </div> 
+    </div>
+    
                 <div className="card-image">
                     <img alt="post" src={photo} />
                 </div>

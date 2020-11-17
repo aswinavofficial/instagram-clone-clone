@@ -123,3 +123,22 @@ html {
      margin : 10px auto;
      max-width: 30%;
    }
+
+   .postedUser {
+     padding-left : 10px;
+     padding-top : 11px;
+     padding-bottom : 5px;
+   }
+
+   .user-img-card {
+
+     padding-left : 20px;
+     padding-top : 10px;
+     padding-bottom : 10px;
+
+   }
+
+   .post-titlebar {
+     display : flex;
+     flex-direction: row;
+   }
