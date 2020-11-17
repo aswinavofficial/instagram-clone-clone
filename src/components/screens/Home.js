@@ -28,7 +28,13 @@ const Home = () => {
 
                 console.log(data.posts)
                 setPosts(data.posts);
-                setCreatedOnBefore(data.posts[data.posts.length -1].createdAt)
+
+                if(data.posts.length !=0) {
+                    
+                    setCreatedOnBefore(data.posts[data.posts.length -1].createdAt)
+                }
+
+
                 return () => {
                     window.removeEventListener('scroll', handleScroll);
                 }
