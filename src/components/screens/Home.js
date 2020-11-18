@@ -26,10 +26,11 @@ const Home = () => {
                     console.log(data.error)
                 }
 
-                console.log(data.posts)
-                setPosts(data.posts);
+                
 
-                if(data.posts.length !=0) {
+                if(data.posts !== undefined && data.posts.length !==0) {
+                    console.log(data.posts)
+                    setPosts(data.posts);
                     
                     setCreatedOnBefore(data.posts[data.posts.length -1].createdAt)
                 }
@@ -72,6 +73,7 @@ const Home = () => {
                     console.log(data.error)
                 }
 
+                if(data.posts !== undefined && data.posts.length !==0) {
                     console.log("loading more posts : ")
                     console.log(data.posts)
                     let newPosts = [...posts,...data.posts]
@@ -81,6 +83,7 @@ const Home = () => {
                     setCreatedOnBefore(newDate)
                     console.log("Data state updated")
                     console.log(posts)
+                }
                     setIsFetching(false);
 
 
