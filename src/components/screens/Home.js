@@ -41,13 +41,45 @@ const Home = () => {
                 }
 
             })
-
+        
     },[])
 
     useEffect(() => {
   if (!isFetching) return;
-  fetchMoreListItems();
 
+  function fetchMoreListItems() {
+  
+    fetch(baseURL +  '/post/latest?createdOnBefore=' + createdOnBefore, requestOptions)
+           .then(response => response.json())
+           .then(data => {
+
+               console.log(data.posts)
+               
+               if (data.error) {
+                   console.log(data.error)
+               }
+
+               if(data.posts !== undefined && data.posts.length !==0) {
+                   console.log("loading more posts : ")
+                   console.log(data.posts)
+                   let newPosts = [...posts,...data.posts]
+
+                   setPosts(newPosts);
+                   let newDate = newPosts[newPosts.length -1].createdAt
+                   setCreatedOnBefore(newDate)
+                   console.log("Data state updated")
+                   console.log(posts)
+               }
+                   setIsFetching(false);
+
+
+
+           })
+
+}
+
+  fetchMoreListItems();
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, [isFetching]);
 
 
@@ -61,37 +93,7 @@ const Home = () => {
   }
 
 
-  function fetchMoreListItems() {
   
-     fetch(baseURL +  '/post/latest?createdOnBefore=' + createdOnBefore, requestOptions)
-            .then(response => response.json())
-            .then(data => {
-
-                console.log(data.posts)
-                
-                if (data.error) {
-                    console.log(data.error)
-                }
-
-                if(data.posts !== undefined && data.posts.length !==0) {
-                    console.log("loading more posts : ")
-                    console.log(data.posts)
-                    let newPosts = [...posts,...data.posts]
-
-                    setPosts(newPosts);
-                    let newDate = newPosts[newPosts.length -1].createdAt
-                    setCreatedOnBefore(newDate)
-                    console.log("Data state updated")
-                    console.log(posts)
-                }
-                    setIsFetching(false);
-
-
-
-            })
- 
-}
-
   
     return (
 

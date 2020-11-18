@@ -28,6 +28,7 @@ const Routing = () => {
     else {
       history.push("/signin")
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -44,12 +45,12 @@ const Routing = () => {
         <Signup />
       </Route>
 
-      <Route path="/profile">
-        <Profile />
-      </Route>
-
       <Route path="/newpost">
         <NewPost />
+      </Route>
+
+      <Route path="/:username">
+        <Profile />
       </Route>
     </Switch>
 

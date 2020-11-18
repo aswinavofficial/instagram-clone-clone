@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link  } from 'react-router-dom'
 const Post = (props) => {
 
     const {photo,title,body,postedBy} = props.post;
@@ -9,7 +9,9 @@ const Post = (props) => {
             <div className="card post-card">
     <div className = "post-titlebar">
     <i className="material-icons Medium user-img-card">account_circle</i>
+    <Link to={'/' + postedBy._id} >
     <div className="postedUser" >{postedBy && postedBy.name} </div> 
+    </Link>
     </div>
     
                 <div className="card-image">
