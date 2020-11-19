@@ -54,8 +54,16 @@ const Profile = (props) => {
         <div className="profile">
 
             <div className="profile-info">
-                <div >
-                    <img className="display-picture" alt="dp" src={dp ? dp: ""} />
+                <div className="dp-upload">
+                <label htmlFor="dp-input">
+                <img className="display-picture" alt="dp" src={dp ? dp: ""} />
+                </label>
+                <input id ="dp-input" type="file"
+                onChange={(e) => {
+                    // setPhoto(e.target.files[0])
+                }} 
+                 />
+                    
                 </div>
 
                 <div >

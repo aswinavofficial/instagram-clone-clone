@@ -8,7 +8,11 @@ const Post = (props) => {
         <div className="post">
             <div className="card post-card">
     <div className = "post-titlebar">
-    <i className="material-icons Medium user-img-card">account_circle</i>
+    
+    <Link to={'/' + postedBy._id} >
+    <img className = "user-avatar-icon" src={postedBy && postedBy.photo}/>
+    </Link>
+
     <Link to={'/' + postedBy._id} >
     <div className="postedUser" >{postedBy && postedBy.name} </div> 
     </Link>
